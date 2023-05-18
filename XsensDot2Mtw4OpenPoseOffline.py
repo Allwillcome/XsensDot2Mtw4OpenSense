@@ -58,9 +58,9 @@ def transformed_Xsens_dot_data_Offline(filename):
        matrix_reshpae = matrix.reshape(matrix_rows,9)          #Convert to n rows and 9 columns of data 转换为 n 行 9 列的数据
        
        #Write the converted data to Excel 将转换好的数据写入到 Excel 当中
-       header_list = ["Mat[1][1]","Mat[1][2]","Mat[1][3]",
-                     "Mat[2][1]","Mat[2][2]","Mat[2][3]",
-                     "Mat[3][1]","Mat[3][2]","Mat[3][3]"]     #According to the results of Xsens rotation matrix, the corresponding columns are assigned table headers 对照 Xsens 旋转矩阵结果，为对应列赋予表头
+       header_list = ["Mat[1][1]","Mat[2][1]","Mat[3][1]",
+                     "Mat[1][2]","Mat[2][2]","Mat[3][2]",
+                     "Mat[1][3]","Mat[2][3]","Mat[3][3]"]     #According to the results of Xsens rotation matrix, the corresponding columns are assigned table headers 对照 Xsens 旋转矩阵结果，为对应列赋予表头
        df_matrix = pd.DataFrame(matrix_reshpae,columns=header_list)
        
        #Align the Xsens MVN built with Dot data 将 Dot 数据构建的 Xsens MVN 一致
